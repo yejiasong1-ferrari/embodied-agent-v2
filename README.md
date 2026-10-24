@@ -4,9 +4,9 @@ Give a simulated Franka Panda a tabletop instruction. It observes the scene thro
 
 **One-line demo:** `把蓝色盒子放到绿色积木右边` — “Place the blue box to the right of the green block” → **see → locate → grasp → place → verify**.
 
-[![V2 Studio after placing the blue box to the right of the green block](evidence/v2-studio-blue-box-demo.png)](evidence/v2-studio-blue-box-demo.mp4)
+[![V2 Studio after placing the blue box to the right of the green block](evidence/v2-studio-blue-box-demo.png)](https://github.com/yejiasong1-ferrari/embodied-agent-v2/raw/refs/heads/main/evidence/v2-studio-blue-box-demo.mp4)
 
-**[Watch the V2 Studio demonstration (MP4, 30 seconds)](evidence/v2-studio-blue-box-demo.mp4).** This is a screen recording of an actual MuJoCo task. The final frame shows the blue box released beside the green block and V2's fresh-image validation reporting success. The Studio scene is the *human observer's* movable camera; the agent makes decisions from its separate wrist-mounted RGB-D camera.
+**[Open the V2 Studio demonstration (MP4, 30 seconds)](https://github.com/yejiasong1-ferrari/embodied-agent-v2/raw/refs/heads/main/evidence/v2-studio-blue-box-demo.mp4).** This is a screen recording of an actual MuJoCo task. The final frame shows the blue box released beside the green block and V2's fresh-image validation reporting success. The Studio scene is the *human observer's* movable camera; the agent makes decisions from its separate wrist-mounted RGB-D camera.
 
 ## How the robot works
 
