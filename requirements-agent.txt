@@ -1,0 +1,10 @@
+# Verified in the existing Python 3.12 environment. No dependency upgrades were made.
+numpy==2.5.3
+mujoco==3.14.0
+pydantic==2.13.5
+opencv-python-headless==5.0.0.93
+Pillow==12.3.0
+ruckig==0.19.4
+ompl==2.0.1
+PySide6-Essentials==6.11.2
+Flask==3.1.3

@@ -1,0 +1,44 @@
+{
+  "success": true,
+  "state": "SUCCESS",
+  "message": "TASK SUCCESS: fresh visual relation and stability verified",
+  "task_id": "task_20261017T161738_5f3d35a9",
+  "log_path": "outputs/agent/task_20261017T161738_5f3d35a9",
+  "metrics": {
+    "execution_time_s": 177.3304390830017,
+    "llm_calls": 11,
+    "recovery_attempts": 1,
+    "grasp_success": true,
+    "lift_success": true,
+    "grasp_attempts": 1,
+    "first_grasp_verified": true,
+    "first_lift_success": true,
+    "placement_success": true,
+    "failure": null,
+    "unexpected_contact_events": 0,
+    "observations": 219,
+    "visual_grounding_calls": 8,
+    "fast_path_used": false,
+    "multiview_used": true,
+    "scan_views": 2,
+    "grasp_reasoner_calls": 1,
+    "grasp_strategies": [
+      "top_grasp"
+    ],
+    "push_attempts": 0,
+    "regrasp_attempts": 0,
+    "final_spatial_constraints": [
+      {
+        "type": "relative_position",
+        "relation": "on",
+        "reference": "yellow_plate_001",
+        "reference_frame": "operator",
+        "distance_semantics": "edge_gap",
+        "requested_gap_m": null,
+        "tolerance_m": 0.01,
+        "satisfied": true,
+        "height_error_m": 0.000301231520610748
+      }
+    ]
+  }
+}

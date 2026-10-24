@@ -1,0 +1,186 @@
+{
+  "task_id": "task_20261017T161738_5f3d35a9",
+  "user_command": "把红色杯子放到黄色盘子上",
+  "config": {
+    "llm": {
+      "mode": "required",
+      "model": "qwen3-vl-plus",
+      "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "timeout_s": 30,
+      "max_calls": 24
+    },
+    "camera": {
+      "width": 640,
+      "height": 480,
+      "detail_width": 1280,
+      "detail_height": 960,
+      "fovy_deg": 65,
+      "mode": "wrist",
+      "viewpoints": [
+        [
+          0.85,
+          -0.85,
+          1.35
+        ],
+        [
+          0.0,
+          0.0,
+          1.65
+        ],
+        [
+          -0.85,
+          0.85,
+          1.35
+        ]
+      ],
+      "look_at": [
+        0,
+        0,
+        0.06
+      ],
+      "view_targets": [],
+      "wrist_scan_angles": [
+        -1.57,
+        -0.7,
+        0.1,
+        0.9,
+        1.7,
+        2.5
+      ]
+    },
+    "robot": {
+      "backend": "mujoco",
+      "gripper_force_target_n": 2.0,
+      "gripper_squeeze_m": 0.006,
+      "physics_settle_s": 0.2
+    },
+    "perception": {
+      "detector": "fallback",
+      "segmenter": "color",
+      "dino_model": "IDEA-Research/grounding-dino-tiny",
+      "sam_checkpoint": "",
+      "sam_config": "configs/sam2.1/sam2.1_hiera_t.yaml",
+      "confidence_threshold": 0.6,
+      "min_pixels": 30,
+      "min_depth_m": 0.025,
+      "max_depth_m": 3.0,
+      "voxel_m": 0.004,
+      "association_m": 0.1,
+      "memory_ttl_s": 40,
+      "max_uncertainty_m": 0.025
+    },
+    "planner": {
+      "cartesian_step_m": 0.025,
+      "joint_step_rad": 0.06,
+      "rrt_timeout_s": 2,
+      "approach_clearance_m": 0.12,
+      "side_approach_clearance_m": 0.06,
+      "transport_clearance_m": 0.13,
+      "side_transport_clearance_m": 0.08,
+      "palm_to_contact_m": 0.147,
+      "max_gripper_width_m": 0.08,
+      "push_tool_radius_m": 0.014,
+      "release_clearance_m": 0.008,
+      "grasp_insertion_m": 0.035,
+      "adjacent_gap_m": 0.025,
+      "base_clearance_radius_m": 0.28,
+      "transfer_radius_m": 0.43,
+      "side_transfer_radius_m": 0.48
+    },
+    "safety": {
+      "workspace": [
+        [
+          -0.75,
+          0.75
+        ],
+        [
+          -0.75,
+          0.75
+        ],
+        [
+          0,
+          1.1
+        ]
+      ],
+      "max_velocity": 0.45,
+      "carrying_velocity": 0.2,
+      "joint_tracking_tolerance_rad": 0.12,
+      "contact_force_limit_n": 20,
+      "min_grasp_force_n": 0.35,
+      "slip_distance_m": 0.018,
+      "placement_xy_tolerance_m": 0.09,
+      "placement_z_tolerance_m": 0.025,
+      "stable_displacement_m": 0.01,
+      "collision_margin_m": 0.008
+    },
+    "recovery": {
+      "max_grasp_attempts": 4,
+      "max_recoveries": 6,
+      "max_steps": 70,
+      "timeout_s": 450,
+      "llm_after_failures": 2
+    },
+    "localization": {
+      "enabled": true,
+      "grounding_mode": "auto",
+      "max_vlm_calls": 10,
+      "detail_vlm_reserve": 2,
+      "max_search_views": 6,
+      "max_local_observations": 4,
+      "max_corrections": 3,
+      "precise_uncertainty_m": 0.012,
+      "precise_max_range_m": 0.5,
+      "min_valid_depth_ratio": 0.7,
+      "max_lock_age_s": 3.0,
+      "observation_distance_m": 0.38,
+      "correction_step_m": 0.012,
+      "correction_tolerance_m": 0.004,
+      "tracking_iou_min": 0.15,
+      "reground_interval_s": 3.0
+    },
+    "grasp": {
+      "fast_top_score_threshold": 0.8,
+      "complexity_threshold": 0.55,
+      "max_multiview_observations": 3,
+      "min_geometry_completeness": 0.65,
+      "profile_slices": 7,
+      "min_slice_points": 12,
+      "finger_clearance_m": 0.008,
+      "max_cloud_points": 12000,
+      "llm_reasoner_enabled": true,
+      "reasoner_candidate_margin": 0.1,
+      "max_reasoner_calls": 2,
+      "side_grasp_force_target_n": 3.0
+    },
+    "spatial": {
+      "default_reference_frame": "operator",
+      "default_distance_semantics": "edge_gap",
+      "operator_origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "operator_yaw_deg": 0.0,
+      "default_tolerance_m": 0.01,
+      "direction_alignment_tolerance_m": 0.025,
+      "near_min_gap_m": 0.05,
+      "near_max_gap_m": 0.12,
+      "candidate_step_m": 0.02,
+      "min_table_edge_margin_m": 0.025,
+      "min_obstacle_margin_m": 0.012
+    },
+    "placement_correction": {
+      "enable_push": true,
+      "max_push_distance_m": 0.05,
+      "push_step_m": 0.015,
+      "max_push_attempts": 3,
+      "max_regrasps": 2,
+      "max_height_width_ratio": 1.8,
+      "min_table_edge_margin_m": 0.04,
+      "push_velocity_m_s": 0.03,
+      "push_force_limit_n": 6.0,
+      "min_observed_motion_m": 0.001
+    },
+    "log_root": "outputs/agent"
+  }
+}

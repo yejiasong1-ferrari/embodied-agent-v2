@@ -1,0 +1,85 @@
+{
+  "environment": {
+    "python": "3.12.12",
+    "mujoco": "3.14.0",
+    "dependencies": "pip check passed"
+  },
+  "tests": {
+    "legacy_v1": 158,
+    "legacy_v2": 27,
+    "new_agent": 25,
+    "all_passed": true
+  },
+  "benchmark": {
+    "seed": 23,
+    "path": "outputs/agent_benchmark_acceptance.json",
+    "summary": {
+      "trials": 5,
+      "task_success_rate": 1.0,
+      "grasp_success_rate": 1.0,
+      "placement_success_rate": 1.0,
+      "perception_error_m": 0.0009101216372243172,
+      "average_recovery_attempts": 0.0,
+      "collision_count": 0,
+      "llm_calls_per_task": 0.0,
+      "execution_time_s": 61.1465383748
+    },
+    "trial_logs": [
+      "outputs/agent/task_20261014T151549_a5375211",
+      "outputs/agent/task_20261014T151630_2c447689",
+      "outputs/agent/task_20261014T151709_d7762b17",
+      "outputs/agent/task_20261014T151903_c544c433",
+      "outputs/agent/task_20261014T152013_dd1dafbf"
+    ]
+  },
+  "online_llm_demo": {
+    "path": "outputs/agent/task_20261013T164406_80b4ac7f",
+    "success": true,
+    "llm_calls": 2,
+    "purposes": [
+      "interpret",
+      "plan"
+    ]
+  },
+  "native_ui_demo": {
+    "path": "outputs/agent/task_20261013T173345_20bd8775",
+    "success": true,
+    "screenshot": "outputs/agent_studio_task.png"
+  },
+  "two_step_clearance": {
+    "path": "outputs/agent/task_20261014T152310_69cb52fa",
+    "visual_success": true,
+    "independent_truth_scoring": "not run",
+    "validated_sources": [
+      "cyan_cup_009",
+      "red_cup_007"
+    ],
+    "fresh_visual_relations": [
+      true,
+      true
+    ],
+    "execution_time_s": 129.4172319160134
+  },
+  "optional_model_weights": {
+    "grounding_dino": "adapter implemented; weights not installed or runtime-tested",
+    "sam2": "adapter implemented; weights not installed or runtime-tested"
+  },
+  "post_change_targeted_regression": {
+    "scenario": "occluded",
+    "seed": 12013,
+    "agent_success": true,
+    "ground_truth_success": true,
+    "log_path": "outputs/agent/task_20261014T152849_b331a760",
+    "metrics": {
+      "execution_time_s": 41.881872541998746,
+      "llm_calls": 0,
+      "recovery_attempts": 0,
+      "grasp_success": true,
+      "lift_success": true,
+      "placement_success": true,
+      "failure": null,
+      "unexpected_contact_events": 0,
+      "observations": 110
+    }
+  }
+}

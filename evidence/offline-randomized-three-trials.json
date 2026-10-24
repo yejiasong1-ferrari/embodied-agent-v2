@@ -1,0 +1,132 @@
+{
+  "summary": {
+    "trials": 3,
+    "task_success_rate": 0.6666666666666666,
+    "grasp_success_rate": 1.0,
+    "placement_success_rate": 0.6666666666666666,
+    "perception_error_m": 0.0017486062076775071,
+    "average_recovery_attempts": 1.0,
+    "collision_count": 0,
+    "llm_calls_per_task": 0.0,
+    "execution_time_s": 69.74894287500017
+  },
+  "trials": [
+    {
+      "trial": 0,
+      "seed": 26354,
+      "scenario": "near_obstacle",
+      "command": "把红色杯子放到黄色盘子上",
+      "agent_success": true,
+      "ground_truth_success": true,
+      "perception_error_m": 0.0004640020045473554,
+      "collision_count": 0,
+      "log_path": "outputs/agent/task_20261017T031219_34d927ee",
+      "execution_time_s": 69.41122175000055,
+      "llm_calls": 0,
+      "recovery_attempts": 0,
+      "grasp_success": true,
+      "lift_success": true,
+      "placement_success": true,
+      "failure": null,
+      "unexpected_contact_events": 0,
+      "observations": 132,
+      "visual_grounding_calls": 0,
+      "fast_path_used": false,
+      "multiview_used": true,
+      "scan_views": 2,
+      "grasp_reasoner_calls": 0,
+      "grasp_strategies": [
+        "top_grasp"
+      ],
+      "push_attempts": 0,
+      "regrasp_attempts": 0,
+      "final_spatial_constraints": [
+        {
+          "type": "relative_position",
+          "relation": "on",
+          "reference": "yellow_plate_001",
+          "reference_frame": "operator",
+          "distance_semantics": "edge_gap",
+          "requested_gap_m": null,
+          "tolerance_m": 0.01,
+          "satisfied": true,
+          "height_error_m": 0.0010512175250200761
+        }
+      ]
+    },
+    {
+      "trial": 1,
+      "seed": 12865,
+      "scenario": "randomized",
+      "command": "把红色杯子放到黄色盘子上",
+      "agent_success": true,
+      "ground_truth_success": true,
+      "perception_error_m": 0.0003184551484005541,
+      "collision_count": 0,
+      "log_path": "outputs/agent/task_20261017T031328_2189f2b0",
+      "execution_time_s": 70.9165048750001,
+      "llm_calls": 0,
+      "recovery_attempts": 0,
+      "grasp_success": true,
+      "lift_success": true,
+      "placement_success": true,
+      "failure": null,
+      "unexpected_contact_events": 0,
+      "observations": 139,
+      "visual_grounding_calls": 0,
+      "fast_path_used": false,
+      "multiview_used": true,
+      "scan_views": 2,
+      "grasp_reasoner_calls": 0,
+      "grasp_strategies": [
+        "top_grasp"
+      ],
+      "push_attempts": 0,
+      "regrasp_attempts": 0,
+      "final_spatial_constraints": [
+        {
+          "type": "relative_position",
+          "relation": "on",
+          "reference": "yellow_plate_001",
+          "reference_frame": "operator",
+          "distance_semantics": "edge_gap",
+          "requested_gap_m": null,
+          "tolerance_m": 0.01,
+          "satisfied": true,
+          "height_error_m": 0.0007585185992782031
+        }
+      ]
+    },
+    {
+      "trial": 2,
+      "seed": 60599,
+      "scenario": "randomized",
+      "command": "把蓝色盒子移到绿色积木右边",
+      "agent_success": false,
+      "ground_truth_success": true,
+      "perception_error_m": 0.004463361470084612,
+      "collision_count": 0,
+      "log_path": "outputs/agent/task_20261017T031439_2f59b0d6",
+      "execution_time_s": 68.91910199999984,
+      "llm_calls": 0,
+      "recovery_attempts": 3,
+      "grasp_success": true,
+      "lift_success": true,
+      "placement_success": false,
+      "failure": "PATH_BLOCKED",
+      "unexpected_contact_events": 0,
+      "observations": 123,
+      "visual_grounding_calls": 0,
+      "fast_path_used": true,
+      "multiview_used": false,
+      "scan_views": 0,
+      "grasp_reasoner_calls": 0,
+      "grasp_strategies": [
+        "top_grasp"
+      ],
+      "push_attempts": 0,
+      "regrasp_attempts": 0,
+      "final_spatial_constraints": []
+    }
+  ]
+}

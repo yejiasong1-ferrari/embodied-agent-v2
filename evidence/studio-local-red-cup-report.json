@@ -1,0 +1,77 @@
+{
+  "case": "red",
+  "checks": {
+    "scene_majority_1440": true,
+    "layout_1280": true,
+    "orbit": true,
+    "pan": true,
+    "wheel_zoom": true,
+    "typing_rf_does_not_trigger_shortcuts": true,
+    "reset_view": true,
+    "focus_mode": true,
+    "escape_focus": true,
+    "preset_Top": true,
+    "preset_Front": true,
+    "preset_Left": true,
+    "preset_Right": true,
+    "preset_Perspective": true,
+    "camera_physics_isolation": true,
+    "camera_perception_isolation": true,
+    "camera_world_isolation": true,
+    "separate_render_model": true,
+    "render_output": true,
+    "input_enter_starts_task": true,
+    "world_object_selection": true,
+    "world_object_focus": true,
+    "validator_matches_ui": true,
+    "task_result_matches_ui": true,
+    "completion_requires_validator": true,
+    "camera_during_motion": true,
+    "clean_shutdown": true
+  },
+  "errors": [],
+  "camera_frames_during_llm": 0,
+  "camera_frames_during_motion": 465,
+  "max_gui_timer_gap_s": 0.18460041700018337,
+  "result": {
+    "log_path": "outputs/agent/task_20261017T050425_afda2fe3",
+    "message": "TASK SUCCESS: fresh visual relation and stability verified",
+    "metrics": {
+      "execution_time_s": 73.95700224999746,
+      "failure": null,
+      "fast_path_used": false,
+      "final_spatial_constraints": [
+        {
+          "distance_semantics": "edge_gap",
+          "height_error_m": 0.0007605244891797161,
+          "reference": "yellow_plate_001",
+          "reference_frame": "operator",
+          "relation": "on",
+          "requested_gap_m": null,
+          "satisfied": true,
+          "tolerance_m": 0.01,
+          "type": "relative_position"
+        }
+      ],
+      "grasp_reasoner_calls": 0,
+      "grasp_strategies": [
+        "top_grasp"
+      ],
+      "grasp_success": true,
+      "lift_success": true,
+      "llm_calls": 0,
+      "multiview_used": true,
+      "observations": 139,
+      "placement_success": true,
+      "push_attempts": 0,
+      "recovery_attempts": 0,
+      "regrasp_attempts": 0,
+      "scan_views": 2,
+      "unexpected_contact_events": 0,
+      "visual_grounding_calls": 0
+    },
+    "state": "SUCCESS",
+    "success": true,
+    "task_id": "task_20261017T050425_afda2fe3"
+  }
+}

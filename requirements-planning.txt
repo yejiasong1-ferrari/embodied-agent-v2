@@ -1,0 +1,3 @@
+# Joint-space planning and jerk-limited trajectory generation.
+ompl==2.0.1
+ruckig==0.19.4
