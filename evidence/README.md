@@ -1,11 +1,17 @@
-# Selected public evidence / 精简公开证据
+# Selected public evidence
 
-这里仅保留少量演示和原始结果，便于核对系统能力和限制。逐帧 RGB-D、接触与运动日志仍在作者本机 `outputs/`，没有上传。这些是分别录制或运行的案例，**不能代表总体成功率或实体机器人性能**。
+This folder contains a small set of checkable demonstrations and result files. Full per-frame RGB-D, contact, and motion logs remain in the author's local `outputs/` directory and are not included here. These items come from **different runs**; they do not establish an overall success rate or performance on physical hardware.
 
-- [`v2-studio-blue-box-demo.mp4`](https://github.com/yejiasong1-ferrari/embodied-agent-v2/raw/refs/heads/main/evidence/v2-studio-blue-box-demo.mp4) 和 [`v2-studio-blue-box-demo.png`](v2-studio-blue-box-demo.png)：2026-10-24 的 V2 Studio 真实任务录屏，指令为“把蓝色盒子放到绿色积木右边”。画面展示机械臂抓取、放置、释放和最终视觉验收通过。公开 MP4 只做了缩小分辨率、去除静音音轨、裁掉末尾录入的 macOS 菜单；封面截自这段视频。它与下面的红杯和随机试验不是同一次运行。此视频没有配套公开的逐帧任务日志，因此只能据画面核对该次演示，不能用于计算成功率。
+## Blue-box V2 Studio demonstration
 
-- [`online-red-cup-task.json`](online-red-cup-task.json) 和 [`online-red-cup-result.json`](online-red-cup-result.json)：同一次在线 LLM 运行，指令是“把红色杯子放到黄色盘子上”。`llm.mode=required`，最终视觉关系与稳定性验收通过；用时约 177 秒，11 次 LLM 调用，1 次恢复。结果 JSON 中的 `log_path` 指向未上传的本地完整日志。
-- [`offline-randomized-three-trials.json`](offline-randomized-three-trials.json)：一组三项随机完整任务，离线语言解析，2/3 任务成功、3/3 抓取成功、2/3 放置成功。第三项出现 `PATH_BLOCKED`，Agent 未通过最终验收；其中 `ground_truth_success=true` 只表示任务结束后某项真值关系成立，不能代替完整任务成功。文件中的 `log_path` 也指向未上传的本地日志。
-- [`studio-local-red-cup-report.json`](studio-local-red-cup-report.json) 和 [`studio-local-red-cup-success.png`](studio-local-red-cup-success.png)：另一项本地规则模式的 Studio UI 检查及结束画面。它与上面的在线 LLM 任务**不是同一次运行**。
+**Instruction:** `把蓝色盒子放到绿色积木右边` — “Place the blue box to the right of the green block.” [Watch the 30-second video on the README page](../README.md#watch-a-real-v2-run), or [download the MP4](v2-studio-blue-box-demo.mp4). The [still frame](v2-studio-blue-box-demo.png) shows the final Studio view.
 
-仿真物体真值仅由执行完成后的评估代码读取；Agent 执行依据 RGB-D 观测、机器人自身状态和接触反馈。截图是给人看的 Studio 观察视角，不是 Agent 的视觉输入。
+This is a screen recording of an actual V2 Studio task on 2026-10-24. The footage shows the arm grasping, placing, releasing, and then receiving a successful visual task check. The public MP4 was resized, its silent audio track was removed, and the trailing macOS menu capture was trimmed. The still was taken from the video. No complete per-frame task log is published for this recording, so its outcome can be inspected in the footage but it cannot be used to calculate a success rate.
+
+## Other, independent runs
+
+- [`online-red-cup-task.json`](online-red-cup-task.json) and [`online-red-cup-result.json`](online-red-cup-result.json) are from one online LLM run of “place the red cup on the yellow plate.” The required LLM mode was active; final visual relation and stability validation passed. The result records about 177 seconds, 11 LLM calls, and one recovery. Its `log_path` points to an unpublished local full log.
+- [`offline-randomized-three-trials.json`](offline-randomized-three-trials.json) contains three randomized complete tasks using local language rules. Two of three tasks passed; three of three grasps and two of three placements passed. The third task encountered `PATH_BLOCKED` and did **not** pass final agent validation. Its `ground_truth_success=true` field only says a post-run truth relation was satisfied; it is not equivalent to complete task success. Listed log paths refer to local unpublished files.
+- [`studio-local-red-cup-report.json`](studio-local-red-cup-report.json) and [`studio-local-red-cup-success.png`](studio-local-red-cup-success.png) document a separate local-rules Studio UI check. They are not screenshots or logs from the online red-cup run above.
+
+During execution, the agent uses RGB-D observations, robot state, and contact feedback. Simulator object truth is accessed for evaluation **after** execution. Studio screenshots show the human observer camera, not the agent's visual input.

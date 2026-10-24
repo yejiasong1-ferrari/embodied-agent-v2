@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="590" viewBox="0 0 1200 590" role="img" aria-labelledby="title desc">
+  <title id="title">V2 Studio and agent data boundaries</title>
+  <desc id="desc">The rotatable Studio view displays the scene and agent events to a human. The agent's wrist RGB-D observations, world model, robot state, and contact feedback drive the task. Simulator ground truth is separate and is read only for post-run evaluation.</desc>
+  <defs>
+    <linearGradient id="background" x2="1" y2="1"><stop stop-color="#101b29"/><stop offset="1" stop-color="#091018"/></linearGradient>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="#75c9ee" stroke-width="1.5"/></marker>
+  </defs>
+  <rect width="1200" height="590" rx="28" fill="url(#background)"/>
+  <rect x="25" y="24" width="1150" height="542" rx="22" fill="none" stroke="#315069" opacity=".55"/>
+  <text x="58" y="75" fill="#eff7ff" font-family="Arial, sans-serif" font-size="34" font-weight="700">Two cameras, two purposes</text>
+  <text x="59" y="110" fill="#a7bdce" font-family="Arial, sans-serif" font-size="21">A beautiful scene view helps people inspect the run. It is not the robot's perception.</text>
+
+  <rect x="55" y="150" width="305" height="272" rx="20" fill="#172536" stroke="#536b83" stroke-width="1.5"/>
+  <rect x="73" y="169" width="269" height="40" rx="12" fill="#29445b"/>
+  <text x="90" y="196" fill="#d9eaff" font-family="Arial, sans-serif" font-size="20" font-weight="700">STUDIO / HUMAN VIEW</text>
+  <rect x="82" y="230" width="251" height="105" rx="12" fill="#0b1723" stroke="#3b6075"/>
+  <path d="M105 306L161 264L222 295L280 249" fill="none" stroke="#9bb9ce" stroke-width="3"/>
+  <circle cx="161" cy="264" r="14" fill="#51a8ea"/><rect x="263" y="232" width="32" height="30" rx="4" fill="#65c47d"/>
+  <text x="87" y="365" fill="#eff7ff" font-family="Arial, sans-serif" font-size="21" font-weight="700">Rotate · zoom · inspect</text>
+  <text x="87" y="394" fill="#a7bdce" font-family="Arial, sans-serif" font-size="17">Receives frames and task events</text>
+
+  <path d="M385 156V423" stroke="#6b7784" stroke-width="2" stroke-dasharray="7 7"/>
+  <rect x="367" y="262" width="37" height="56" rx="12" fill="#1a2633"/>
+  <text x="385" y="296" text-anchor="middle" fill="#f1c576" font-family="Arial, sans-serif" font-size="27" font-weight="700">×</text>
+  <text x="385" y="450" text-anchor="middle" fill="#f1c576" font-family="Arial, sans-serif" font-size="17">no visual-input shortcut</text>
+
+  <rect x="415" y="150" width="730" height="272" rx="20" fill="#122c37" stroke="#438c9a" stroke-width="1.5"/>
+  <rect x="434" y="169" width="692" height="40" rx="12" fill="#1e4e5a"/>
+  <text x="454" y="196" fill="#d8fbfc" font-family="Arial, sans-serif" font-size="20" font-weight="700">AGENT / DECISION AND CONTROL PATH</text>
+
+  <g fill="#10212d" stroke="#477b8d">
+    <rect x="445" y="242" width="192" height="125" rx="14"/>
+    <rect x="684" y="242" width="192" height="125" rx="14"/>
+    <rect x="923" y="242" width="192" height="125" rx="14"/>
+  </g>
+  <g fill="#eff8fa" font-family="Arial, sans-serif" font-size="21" font-weight="700">
+    <text x="461" y="278">Wrist RGB-D</text><text x="700" y="278">World model</text><text x="939" y="278">Local skills</text>
+  </g>
+  <g fill="#aecbd2" font-family="Arial, sans-serif" font-size="17">
+    <text x="461" y="310"><tspan x="461" dy="0">Color + depth</tspan><tspan x="461" dy="25">Measured candidates</tspan></text>
+    <text x="700" y="310"><tspan x="700" dy="0">3D pose + confidence</tspan><tspan x="700" dy="25">Observation age</tspan></text>
+    <text x="939" y="310"><tspan x="939" dy="0">Motion + safety</tspan><tspan x="939" dy="25">Contact + validation</tspan></text>
+  </g>
+  <g stroke="#75c9ee" stroke-width="3" fill="none" marker-end="url(#arrow)"><path d="M645 304H673"/><path d="M884 304H912"/></g>
+  <text x="780" y="398" text-anchor="middle" fill="#8ec5cf" font-family="Arial, sans-serif" font-size="17">Robot state and gripper contact also inform execution and checks</text>
+
+  <rect x="415" y="474" width="730" height="67" rx="16" fill="#29251d" stroke="#8c7650"/>
+  <text x="440" y="501" fill="#f4dda9" font-family="Arial, sans-serif" font-size="19" font-weight="700">POST-RUN EVALUATION</text>
+  <text x="440" y="526" fill="#d4c8b0" font-family="Arial, sans-serif" font-size="18">Simulator object truth is read after execution; it does not steer the agent.</text>
+</svg>
